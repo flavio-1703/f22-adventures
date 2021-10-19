@@ -1,7 +1,7 @@
 import pygame
 from Entity.Entity import Entity
 from Entity.Bullet import Bullet
-from params import * 
+from Window.Window import Window
 
 class Fighter(Entity):
     def __init__(self, width, height, pos_x, pos_y, image, speed):
@@ -38,14 +38,14 @@ class Fighter(Entity):
         if self.rect.top < 0:
             self.rect.top = 0
 
-        if self.rect.bottom > WIN_HEIGHT:
-            self.rect.bottom = WIN_HEIGHT 
+        if self.rect.bottom > Window.HEIGHT:
+            self.rect.bottom = Window.HEIGHT 
         
         if self.rect.left < 0:
             self.rect.left = 0;
 
-        if self.rect.right > WIN_WIDTH:
-            self.rect.right = WIN_WIDTH
+        if self.rect.right > Window.WIDTH:
+            self.rect.right = Window.WIDTH
 
     def move_left(self):
         self.rect.x -= self.get_speed() 

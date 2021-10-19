@@ -1,5 +1,5 @@
 from Entity.Enemy import Enemy
-from params import *
+from Window.Window import Window
 import pygame
 
 class Airplane(Enemy):
@@ -19,7 +19,7 @@ class Airplane(Enemy):
         if not self.hit_end:
             self.move_right()
 
-            if self.rect.right >= WIN_WIDTH:
+            if self.rect.right >= Window.WIDTH:
                 self.hit_start = False
                 self.hit_end = True
 
@@ -34,7 +34,7 @@ class Airplane(Enemy):
     def update(self):
         self.move()
         
-        if self.rect.x >= WIN_HEIGHT:
+        if self.rect.x >= Window.HEIGHT:
             self.kill()
         
         if self.health == 0:
